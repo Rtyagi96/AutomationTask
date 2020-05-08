@@ -74,7 +74,8 @@ public class Page1 {
         //String browser = new TestBase().prop.getProperty("browser");
         if(browser.equalsIgnoreCase("chrome")) {
             inputCalendarDate.sendKeys(calendarHelper.getNewDate());
-        }else if(browser.equalsIgnoreCase("firefox")){
+        }
+            else {
             date.clear();
             date.sendKeys(calendarHelper.getDateValue());
             month.clear();
