@@ -28,7 +28,7 @@ public class TestSubmitForm extends TestBase{
     @Parameters("browser")
     @BeforeTest
     void setUp(String browser) {
-
+          // uncomment in case you want to run test certain inputs from property file.
 //        if(prop.getProperty("browser").equalsIgnoreCase("Chrome")) {
 //            WebDriverManager.chromedriver().setup();
 //            driver = new ChromeDriver();
@@ -36,10 +36,10 @@ public class TestSubmitForm extends TestBase{
 //            WebDriverManager.firefoxdriver().setup();
 //            driver = new FirefoxDriver();
 //        }else {
-//            WebDriverManager.iedriver().setup();
+//            System.setProperty("webdriver.ie.driver", ResourceHelper.getResourcePath("/src/drivers/IEDriverServer.exe"));
 //            driver = new InternetExplorerDriver();
 //        }
-
+        // In case test ran using XML file
         if(browser.equalsIgnoreCase("chrome")){
             WebDriverManager.chromedriver().setup();
             driver =new ChromeDriver();
@@ -47,7 +47,7 @@ public class TestSubmitForm extends TestBase{
             WebDriverManager.firefoxdriver().setup();
             driver = new FirefoxDriver();
         }else {
-            WebDriverManager.iedriver().setup();
+            System.setProperty("webdriver.ie.driver", ResourceHelper.getResourcePath("/src/drivers/IEDriverServer.exe"));
             driver = new InternetExplorerDriver();
         }
         driver.manage().window().maximize();
