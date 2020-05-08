@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
-<suite name="ZoomTask" parallel="tests" thread-count="2">
+<suite name="ZoomTask" parallel="tests" thread-count="3">
 
 
     <test name="Test Chrome" >
@@ -14,6 +14,13 @@
 
     <test name="Test Firefox" >
         <parameter name="browser" value="firefox"></parameter>
+        <classes>
+            <class name="TestSubmitForm">
+            </class>
+        </classes>
+    </test>
+    <test name="Test IE" >
+        <parameter name="browser" value="ie"></parameter>
         <classes>
             <class name="TestSubmitForm">
             </class>
