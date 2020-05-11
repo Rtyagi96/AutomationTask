@@ -80,26 +80,11 @@ public class CalendarHelper {
     }
     public LocalDate getNewDateFirefox() {
 
-        SimpleDateFormat sdf = new SimpleDateFormat("MM-dd-yyyy");
-        //Getting current date
-        Calendar cal = Calendar.getInstance();
-
-        //Displaying current date in the desired format
-        log.info("Current Date in MM-dd-yyyy ---> " + sdf.format(cal.getTime()));
-
-        //Provide the number of days to be added to the current date
-        cal.add(Calendar.DAY_OF_MONTH, 5);
-
-        //Date after adding the days to the current date
-        String newDate = sdf.format(cal.getTime());
-
-        //Displaying the new Date after addition of Days to current date
-
+      String newDate = getNewDate();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM-dd-yyyy");
         formatter = formatter.withLocale(Locale.ENGLISH);
         LocalDate NewDateAfterAddition = LocalDate.parse(newDate, formatter);
         log.info("New date after Addition MM-dd-yyyy ---> " + NewDateAfterAddition);
-
         return NewDateAfterAddition;
     }
 }
